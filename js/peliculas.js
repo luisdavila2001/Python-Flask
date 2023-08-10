@@ -1,8 +1,8 @@
 const getPeliculas=async() =>{
-  let idx=(new URLSearchParams(window.location,search)).get('idx')
-
-  const data= await fetch(`http://localhost/cinestar_sweb_php/peliculas/${idx}`)
-    if(data.status==200){
+  const idx=(new URLSearchParams(window.location.search)).get('idx')
+  const data= await fetch(`https://webcinestar001.000webhostapp.com/cinestar_sweb_php/peliculas/cartelera`)
+    
+  if(data.status==200){
         const peliculas =await data.json()
         let html=`<br/><h1>Cartelera</h1><br/>`
 
@@ -32,7 +32,7 @@ const getPeliculas=async() =>{
     }
 }
 
-getpeliculas()
+getPeliculas()
 
 
 
