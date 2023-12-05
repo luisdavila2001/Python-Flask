@@ -1,0 +1,19 @@
+﻿{% extends './index.html' %}
+{% block content %}
+<br/><h1>Nuestros Cines</h1><br/>
+{% for id in cines %}
+<div class="contenido-cine">
+	<img src="{{ url_for('static', filename='img/cine/%s.1.jpg' % id[0]) }}" width="227" height="170"/>
+	   <div class="datos-cine">
+			  <h4>{{ id [1]}}</h4><br/>
+		<span>{{id [4]}} - {{id [6]}}<br/><br/>Teléfono: {{id [5]}}</span>
+	</div>
+	<br/>
+	<a href="cine/{{id[0]}}">
+		<img src="{{ url_for('static', filename='img/varios/ico-info2.png') }}" width="150" height="40"/>
+	</a>
+</div>
+{% endfor %}
+{% endblock %}
+
+			
